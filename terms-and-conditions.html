@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PiXL Me</title>
+    <link rel="icon" href="./assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="./assets/images/logo192.png" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="./assets/images/pixlme-logo.svg" alt="" />
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav id="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-submenu">
+            <a href="javascript:void(0)"
+              >How it works
+              <div class="upanddownArrow"></div
+            ></a>
+            <ul class="submenu">
+              <li>
+                <a href="customers.html" target="_self">For Subscribers</a>
+              </li>
+              <li><a href="artists.html" target="_self">For Artists</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#features">Features</a></li>
+          <!-- <li><a href="https://app.pixlme.com/" target="_blank">Artists</a></li> -->
+          <li><a href="artists.html#artistTestimonials">Artists</a></li>
+          <!-- <li><a href="index.html#pricing">Pricing</a></li> -->
+          <li><a href="#" onclick="openPricing()">Pricing</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="signup">
+          <a href="https://app.pixlme.com/register" target="_blank"> Sign Up</a>
+        </button>
+        <button class="login">
+          <a href="https://app.pixlme.com/" target="_blank">Login</a>
+        </button>
+      </div>
+    </header>
+
+    <div class="pixmeOneralWrap">
+      <div class="privacy-policy">
+        <h1>Terms and Conditions</h1>
+        <p>
+          Welcome to PiXL Me, a photo-sharing application that allows Subscribers
+          to stream photographs to their TV screens. By using the PiXL Me app,
+          you agree to the following terms and conditions. Please read them
+          carefully.
+        </p>
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By downloading, installing, or using the PiXL Me app, you agree to be
+          bound by these Terms and Conditions. If you do not agree to these
+          terms, please do not use the app.
+        </p>
+        <h2>2. Description of Service</h2>
+        <p>
+          PiXL Me provides a platform where users can subscribe to stream
+          photographs uploaded by artists and photographers. The service is
+          available on a subscription basis, offering different plans and
+          features.
+        </p>
+        <h2>3. Subscription Model</h2>
+        <ul>
+          <li>
+            <strong>Free Tier:</strong> Access to a limited selection of
+            photographs with advertisements.
+          </li>
+          <li>
+            <strong>Premium Tier:</strong> Ad-free access to the full library of
+            photographs for a monthly or annual subscription fee.
+          </li>
+        </ul>
+        <h2>4. Account Registration</h2>
+        <ul>
+          <li>Users must create an account to use PiXL Me.</li>
+          <li>
+            You agree to provide accurate and complete information during the
+            registration process.
+          </li>
+          <li>
+            You are responsible for maintaining the confidentiality of your
+            account credentials.
+          </li>
+        </ul>
+        <h2>5. User Responsibilities</h2>
+        <ul>
+          <li>You must be at least 13 years old to use PiXL Me.</li>
+          <li>
+            You agree not to use PiXL Me for any illegal or unauthorized purpose.
+          </li>
+          <li>
+            You agree not to interfere with or disrupt the app or servers
+            connected to the app.
+          </li>
+        </ul>
+        <h2>6. Content and Intellectual Property</h2>
+        <ul>
+          <li>
+            All photographs uploaded to PiXL Me are owned by the respective
+            artists/photographers.
+          </li>
+          <li>
+            Users are granted a limited, non-exclusive, non-transferable license
+            to stream the photographs for personal, non-commercial use.
+          </li>
+          <li>
+            You may not copy, modify, or distribute any content from PiXL Me
+            without prior written permission from the content owner.
+          </li>
+        </ul>
+        <h2>7. Payments and Refunds</h2>
+        <ul>
+          <li>
+            Subscription fees are billed in advance on a monthly or annual
+            basis.
+          </li>
+          <li>
+            All payments are non-refundable except as required by law or at
+            PiXL Me's discretion.
+          </li>
+          <li>
+            PiXL Me reserves the right to change the subscription fees at any
+            time. Any changes will be communicated to you in advance.
+          </li>
+        </ul>
+        <h2>8. Termination</h2>
+        <ul>
+          <li>
+            PiXL Me reserves the right to suspend or terminate your account at
+            any time for any reason, including violation of these Terms and
+            Conditions.
+          </li>
+          <li>
+            Upon termination, your right to use the app will immediately cease.
+          </li>
+        </ul>
+        <h2>9. Privacy Policy</h2>
+        <p>
+          PiXL Me respects your privacy and is committed to protecting your
+          personal data. Please review our Privacy Policy for more information.
+        </p>
+        <h2>10. Limitation of Liability</h2>
+        <p>
+          PiXL Me is provided "as is" and "as available" without warranties of
+          any kind. PiXL Me will not be liable for any damages arising from the
+          use of or inability to use the app.
+        </p>
+        <h2>11. Changes to Terms</h2>
+        <ul>
+          <li>
+            PiXL Me reserves the right to modify these Terms and Conditions at
+            any time. Any changes will be effective immediately upon posting the
+            updated terms on the app.
+          </li>
+          <li>
+            Your continued use of the app after any changes constitutes your
+            acceptance of the new terms.
+          </li>
+        </ul>
+        <h2>12. Contact Information</h2>
+        <p>
+          For any questions or concerns regarding these Terms and Conditions,
+          please contact us at
+          <a href="mailto:support@pixlme.com">support@pixlme.com</a>.
+        </p>
+      </div>
+    </div>
+
+     <!-- Pricing Model -->
+<div id="pricing" class="model">
+  <div class="model-content">
+    <span class="close-button" onclick="closePricing()">×</span>
+
+    <!-- Pricing Container popup-->
+    <div class="pricingContainer">
+      <div class="pricingWrap">
+        <div class="priceLeft">
+          <h2 class="priceTitle">Pricing</h2>
+          <div class="dashed-line"></div>
+          <p class="priceDescription">
+            Start with a 15-day free trial and explore everything PiXL Me has
+            to offer. Join our Premium Plan for just $3.99/month for
+            unlimited access to all features and content, including exclusive
+            collections and multi-device streaming.
+          </p>
+        </div>
+
+        <div class="priceRight">
+          <div class="tag">Premium Plan</div>
+          <h2 class="price">$3.99<span class="month">/month</span></h2>
+          <h3 class="Title" onclick="window.open('https://app.pixlme.com/', '_blank')">
+            Get Started Now
+          </h3>
+          <div class="downApp">
+            <a href="https://play.google.com/store/apps/details?id=com.pixlme.app" target="_blank"
+             rel="noopener noreferrer">
+              <img src="./assets/images/playstore.svg" alt="App Store" />
+            </a>
+            <a href="https://apps.apple.com/in/app/pixlme-stream-quality-photos/id6667108899" target="_blank"
+            rel="noopener noreferrer">
+              <img src="./assets/images/appstore.svg" alt="Google Play" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="footer">
+      <div class="footerContent">
+        <!-- Column 1 -->
+        <div class="f-col1">
+          <div class="f-logoSec">
+            <img src="./assets/images/pixlme-logo.svg" alt="Logo" />
+            <div class="f-linksec gap20">
+              <div class="f-heading">Contact</div>
+              <a href="mailto:support@pixlme.com">support@pixlme.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Our Company</div>
+            <a href="aboutus.html">About Us</a>
+            <a href="mailto:support@pixlme.com">Support</a>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Quick Links</div>
+            <a href="https://app.pixlme.com/" target="_blank">Login</a>
+            <a href="https://app.pixlme.com/" target="_blank">Sign Up</a>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Follow Us</div>
+            <a href="https://www.facebook.com/share/18npwqgYsY/?mibextid=wwXIfr" target="_blank"
+              ><svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                ></path>
+              </svg>
+              Facebook</a
+            >
+            <a href=" https://www.instagram.com/pixl.me?igsh=MW1nYzd1andvcjFteA==" target="_blank" class="social">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                ></path>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyRightsec">
+        <div class="copyText">
+          <p>&copy; 2025 PiXL Me. All rights reserved.</p>
+        </div>
+
+        <div class="copyLinkP">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms & Conditions</a>
+          <a href="licence-agreement.html">License Agreement</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

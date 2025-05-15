@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PiXL Me</title>
+    <link rel="icon" href="./assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="./assets/images/logo192.png" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="./assets/images/pixlme-logo.svg" alt="" />
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav id="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="has-submenu">
+            <a href="javascript:void(0)"
+              >How it works
+              <div class="upanddownArrow"></div
+            ></a>
+            <ul class="submenu">
+              <li>
+                <a href="customers.html" target="_self">For Subscribers</a>
+              </li>
+              <li><a href="artists.html" target="_self">For Artists</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#features">Features</a></li>
+          <!-- <li><a href="https://app.pixlme.com/" target="_blank">Artists</a></li> -->
+          <li><a href="artists.html#artistTestimonials">Artists</a></li>
+          <!-- <li><a href="index.html#pricing">Pricing</a></li> -->
+          <li><a href="#" onclick="openPricing()">Pricing</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="signup">
+          <a href="https://app.pixlme.com/register" target="_blank"> Sign Up</a>
+        </button>
+        <button class="login">
+          <a href="https://app.pixlme.com/" target="_blank">Login</a>
+        </button>
+      </div>
+    </header>
+
+    <div class="pixmeOneralWrap" id="main">
+      <div class="coverSection">
+        <div class="coverLeft">
+          <div class="tagCover customer animate-on-scroll">
+            <div class="circle"></div>
+            <p>For Customers</p>
+          </div>
+          <h2>
+            Discover and stream <br />
+            stunning Art on your TV
+          </h2>
+
+          <div
+            class="tagCover txt-center animate-on-scroll"
+            onclick="window.open('https://app.pixlme.com/', '_blank')"
+          >
+            <p>Get Started</p>
+          </div>
+        </div>
+        <div class="coverRight">
+          <!-- <div class="stars">
+            <span>+</span><span>+</span><span>+</span><span>+</span
+            ><span>+</span><span>+</span><span>+</span><span>+</span>
+            <span>+</span><span>+</span><span>+</span><span>+</span
+            ><span>+</span><span>+</span><span>+</span><span>+</span>
+          </div> -->
+          <p>
+            At PiXL Me, we believe in making beautiful art accessible to
+            everyone. Discover, curate, and stream high-quality art collections
+            to your TV and other display devices, transforming your space into a
+            dynamic art gallery.
+          </p>
+        </div>
+      </div>
+      <div class="fullImageSection animate-on-scroll">
+        <img src="./assets/images/consumer/HIW-Subscribers.jpg" alt="" />
+      </div>
+      <div class="benefits3column animate-on-scroll">
+        <h2>Benefits</h2>
+        <div class="benefitContentWrap">
+          <div class="benefitCol">
+            <div class="icon">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                class="benefitIcon"
+              >
+                <path
+                  d="M21.4492 6.66162C23.0898 6.66162 24.4492 8.021 24.4492 9.66162V21.6616C24.4492 23.3491 23.0898 24.6616 21.4492 24.6616H3.44922C1.76172 24.6616 0.449219 23.3491 0.449219 21.6616V9.66162C0.449219 8.021 1.76172 6.66162 3.44922 6.66162H21.4492ZM21.4492 8.16162H3.44922C2.60547 8.16162 1.94922 8.86475 1.94922 9.66162V21.6616C1.94922 22.5054 2.60547 23.1616 3.44922 23.1616H21.4492C22.2461 23.1616 22.9492 22.5054 22.9492 21.6616V9.66162C22.9492 8.86475 22.2461 8.16162 21.4492 8.16162ZM21.4492 3.66162C21.8242 3.66162 22.1992 4.03662 22.1992 4.41162C22.1992 4.8335 21.8242 5.16162 21.4492 5.16162H3.44922C3.02734 5.16162 2.69922 4.8335 2.69922 4.41162C2.69922 4.03662 3.02734 3.66162 3.44922 3.66162H21.4492ZM19.1992 0.661621C19.5742 0.661621 19.9492 1.03662 19.9492 1.41162C19.9492 1.8335 19.5742 2.16162 19.1992 2.16162H5.69922C5.27734 2.16162 4.94922 1.8335 4.94922 1.41162C4.94922 1.03662 5.27734 0.661621 5.69922 0.661621H19.1992Z"
+                ></path>
+              </svg>
+              <h2>Diverse art collections</h2>
+              <p>
+                Explore diverse collections ranging from contemporary
+                photography to classic photographic art.
+              </p>
+            </div>
+          </div>
+          <div class="benefitCol">
+            <div class="icon">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                class="benefitIcon"
+              >
+                <path
+                  d="M21.4492 6.66162C23.0898 6.66162 24.4492 8.021 24.4492 9.66162V21.6616C24.4492 23.3491 23.0898 24.6616 21.4492 24.6616H3.44922C1.76172 24.6616 0.449219 23.3491 0.449219 21.6616V9.66162C0.449219 8.021 1.76172 6.66162 3.44922 6.66162H21.4492ZM21.4492 8.16162H3.44922C2.60547 8.16162 1.94922 8.86475 1.94922 9.66162V21.6616C1.94922 22.5054 2.60547 23.1616 3.44922 23.1616H21.4492C22.2461 23.1616 22.9492 22.5054 22.9492 21.6616V9.66162C22.9492 8.86475 22.2461 8.16162 21.4492 8.16162ZM21.4492 3.66162C21.8242 3.66162 22.1992 4.03662 22.1992 4.41162C22.1992 4.8335 21.8242 5.16162 21.4492 5.16162H3.44922C3.02734 5.16162 2.69922 4.8335 2.69922 4.41162C2.69922 4.03662 3.02734 3.66162 3.44922 3.66162H21.4492ZM19.1992 0.661621C19.5742 0.661621 19.9492 1.03662 19.9492 1.41162C19.9492 1.8335 19.5742 2.16162 19.1992 2.16162H5.69922C5.27734 2.16162 4.94922 1.8335 4.94922 1.41162C4.94922 1.03662 5.27734 0.661621 5.69922 0.661621H19.1992Z"
+                ></path>
+              </svg>
+              <h2>Enhanced home entertainment</h2>
+              <p>
+                Enhance your home entertainment experience by streaming curated
+                art collections.
+              </p>
+            </div>
+          </div>
+          <div class="benefitCol">
+            <div class="icon">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+                class="benefitIcon"
+              >
+                <g clip-path="url(#clip0_1868_8355)">
+                  <path
+                    d="M4.61523 0.661621C4.99023 0.661621 5.36523 1.03662 5.36523 1.41162V4.50537C7.05273 4.88037 8.36523 6.38037 8.36523 8.16162C8.36523 9.98975 7.05273 11.4897 5.36523 11.8647V23.9116C5.36523 24.3335 4.99023 24.6616 4.61523 24.6616C4.19336 24.6616 3.86523 24.3335 3.86523 23.9116V11.8647C2.13086 11.4897 0.865234 9.98975 0.865234 8.16162C0.865234 6.38037 2.13086 4.88037 3.86523 4.50537V1.41162C3.86523 1.03662 4.19336 0.661621 4.61523 0.661621ZM4.61523 10.4116C5.83398 10.4116 6.86523 9.42725 6.86523 8.16162C6.86523 6.94287 5.83398 5.91162 4.61523 5.91162C3.34961 5.91162 2.36523 6.94287 2.36523 8.16162C2.36523 9.42725 3.34961 10.4116 4.61523 10.4116ZM15.8652 17.1616C15.8652 18.9897 14.5527 20.4897 12.8652 20.8647V23.9116C12.8652 24.3335 12.4902 24.6616 12.1152 24.6616C11.6934 24.6616 11.3652 24.3335 11.3652 23.9116V20.8647C9.63086 20.4897 8.36523 18.9897 8.36523 17.1616C8.36523 15.3804 9.63086 13.8335 11.3652 13.5054V1.41162C11.3652 1.03662 11.6934 0.661621 12.1152 0.661621C12.4902 0.661621 12.8652 1.03662 12.8652 1.41162V13.5054C14.5527 13.8335 15.8652 15.3804 15.8652 17.1616ZM12.1152 19.4116C13.334 19.4116 14.3652 18.4272 14.3652 17.1616C14.3652 15.9429 13.334 14.9116 12.1152 14.9116C10.8496 14.9116 9.86523 15.9429 9.86523 17.1616C9.86523 18.4272 10.8496 19.4116 12.1152 19.4116ZM20.3652 23.9116C20.3652 24.3335 19.9902 24.6616 19.6152 24.6616C19.1934 24.6616 18.8652 24.3335 18.8652 23.9116V13.3647C17.1309 12.9897 15.8652 11.4897 15.8652 9.66162C15.8652 7.88037 17.1309 6.3335 18.8652 6.00537V1.41162C18.8652 1.03662 19.1934 0.661621 19.6152 0.661621C19.9902 0.661621 20.3652 1.03662 20.3652 1.41162V6.00537C22.0527 6.3335 23.3652 7.88037 23.3652 9.66162C23.3652 11.4897 22.0527 12.9897 20.3652 13.3647V23.9116ZM19.6152 7.41162C18.3496 7.41162 17.3652 8.44287 17.3652 9.66162C17.3652 10.9272 18.3496 11.9116 19.6152 11.9116C20.834 11.9116 21.8652 10.9272 21.8652 9.66162C21.8652 8.44287 20.834 7.41162 19.6152 7.41162Z"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_1868_8355">
+                    <rect
+                      width="24"
+                      height="24"
+                      fill="white"
+                      transform="translate(0.115234 0.661621)"
+                    ></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <h2>Personalized experience</h2>
+              <p>
+                Personalize your viewing experience with our tailored
+                recommendations and playlist features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="FeaturebenefitContainer style2 animate-on-scroll"
+        id="features"
+      >
+        <h2 class="headingText mb-1">Key Features</h2>
+        <div class="FeatureWrap style2">
+          <div class="right">
+            <div class="tab-content1 active" id="content1">
+              <img
+                class="feature-image"
+                src="./assets/images/consumer/keyfeatures/consumerKeyFeature.webp"
+                alt="Feature 1 Image"
+              />
+              <div class="tab-link1 mobile" data-tab1="content1">
+                <div class="TitleSec">
+                  <h2>Browsing and discovery</h2>
+                </div>
+                <p class="tabDesc ml0">
+                  Easily browse our vast database of unique images and curated collections.
+                </p>
+              </div>
+            </div>
+            <div class="tab-content1" id="content2">
+              <img
+                class="feature-image"
+                src="./assets/images/consumer/keyfeatures/consumerKeyFeature2.webp"
+                alt="Feature 2 Image"
+              />
+              <div class="tab-link1 mobile" data-tab1="content2">
+                <div class="TitleSec">
+                  <h2>Favorite and playlist creation</h2>
+                </div>
+                <p class="tabDesc ml0">
+                  Save your favorite artworks and create personalized playlists.
+                </p>
+              </div>
+            </div>
+            <div class="tab-content1" id="content3">
+              <img
+                class="feature-image"
+                src="./assets/images/consumer/keyfeatures/consumerKeyFeature3.webp"
+                alt="Feature 3 Image"
+              />
+              <div class="tab-link1 mobile" data-tab1="content3">
+                <div class="TitleSec">
+                  <h2>2-Click streaming</h2>
+                </div>
+                <p class="tabDesc ml0">
+                  With just two clicks, stream art directly to your TV or other
+                  devices, transforming your viewing experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="left">
+            <div class="tab-link1 active" data-tab1="content1">
+              <div class="TitleSec">
+                <h2>Browsing and discovery</h2>
+              </div>
+              <p class="tabDesc">
+                Easily browse our vast database of unique images and curated collections.
+              </p>
+            </div>
+            <div class="tab-link1" data-tab1="content2">
+              <div class="TitleSec">
+                <h2>Favorite and playlist creation</h2>
+              </div>
+              <p class="tabDesc">
+                Save your favorite artworks and create personalized playlists.
+              </p>
+            </div>
+            <div class="tab-link1" data-tab1="content3">
+              <div class="TitleSec">
+                <h2>2-Click streaming</h2>
+              </div>
+              <p class="tabDesc">
+                With just two clicks, stream art directly to your TV or other
+                devices, transforming your viewing experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="appDownloadContainer animate-on-scroll">
+        <div class="appdcWrap">
+          <div class="adcLeft">
+            <h2>
+              <span>Stream your art</span><br />anywhere anytime <br />on your
+              TV
+            </h2>
+            <div class="tvCompatible">
+              <p>Compatible with Smart TVs</p>
+              <div class="suportTvWrap">
+                <img
+                  src="./assets/images/compatible/samsung-pixme.svg"
+                  alt="TV Compatibility"
+                />
+                <img
+                  class="apple"
+                  src="./assets/images/compatible/appletv-pixme.svg"
+                  alt="TV Compatibility"
+                />
+                <img
+                  src="./assets/images/compatible/sony-pixme.svg"
+                  alt="TV Compatibility"
+                />
+                <img
+                  src="./assets/images/compatible/android-pixme.svg"
+                  alt="TV Compatibility"
+                />
+              </div>
+            </div>
+            <div class="appDownloadSec">
+              <p>Compatible on any Android & iOS devices</p>
+              <div class="downApp">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.pixlme.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="./assets/images/playstore.svg" alt="" />
+                </a>
+                <a
+                  href="https://apps.apple.com/in/app/pixlme-stream-quality-photos/id6667108899"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="./assets/images/appstore.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="adcRight">
+            <img
+              src="./assets/images/stream_tv/stream_your_art@4x.png"
+              alt="Stream Your Tv"
+            />
+          </div>
+        </div>
+      </div>
+
+
+         <!-- Pricing Model -->
+<div id="pricing" class="model">
+  <div class="model-content">
+    <span class="close-button" onclick="closePricing()">×</span>
+
+    <!-- Pricing Container popup-->
+    <div class="pricingContainer">
+      <div class="pricingWrap">
+        <div class="priceLeft">
+          <h2 class="priceTitle">Pricing</h2>
+          <div class="dashed-line"></div>
+          <p class="priceDescription">
+            Start with a 15-day free trial and explore everything PiXL Me has
+            to offer. Join our Premium Plan for just $3.99/month for
+            unlimited access to all features and content, including exclusive
+            collections and multi-device streaming.
+          </p>
+        </div>
+
+        <div class="priceRight">
+          <div class="tag">Premium Plan</div>
+          <h2 class="price">$3.99<span class="month">/month</span></h2>
+          <h3 class="Title" onclick="window.open('https://app.pixlme.com/', '_blank')">
+            Get Started Now
+          </h3>
+          <div class="downApp">
+            <a href="https://play.google.com/store/apps/details?id=com.pixlme.app" target="_blank"
+             rel="noopener noreferrer">
+              <img src="./assets/images/playstore.svg" alt="App Store" />
+            </a>
+            <a href="https://apps.apple.com/in/app/pixlme-stream-quality-photos/id6667108899" target="_blank"
+            rel="noopener noreferrer">
+              <img src="./assets/images/appstore.svg" alt="Google Play" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- Pricing Container -->
+      <div class="pricingContainer animate-on-scroll" id="pricing">
+        <div class="pricingWrap">
+          <div class="priceLeft">
+            <h2 class="priceTitle">Pricing</h2>
+            <div class="dashed-line"></div>
+            <p class="priceDescription">
+              Start with a 15-day free trial and explore everything PiXL Me has
+              to offer. Join our Premium Plan for just $3.99/month for
+              unlimited access to all features and content, including exclusive
+              collections and multi-device streaming.
+            </p>
+          </div>
+
+          <div class="priceRight">
+            <div class="tag">Premium Plan</div>
+            <h2 class="price">$3.99<span class="month">/month</span></h2>
+            <!-- <div class="tag red">Save $60</div> -->
+            <h3
+              class="Title"
+              onclick="window.open('https://app.pixlme.com/', '_blank')"
+            >
+              Get Started Now
+            </h3>
+            <div class="downApp">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.pixlme.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./assets/images/playstore.svg" alt="App Store" />
+              </a>
+              <a
+                href="https://apps.apple.com/in/app/pixlme-stream-quality-photos/id6667108899"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./assets/images/appstore.svg" alt="Google Play" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-container animate-on-scroll">
+        <div class="guideWrap">
+          <div class="guide-title">Step by Step Guide</div>
+        </div>
+        <div class="tab-content active" id="Subscribers">
+          <div class="step step1">
+            <div class="stepCount">
+              <span>1</span>
+              <p>Download & Install</p>
+            </div>
+
+            <div class="imageGuideWrap">
+              <img
+                src="./assets/images/step/subscribers/download-install-customers@4x.png"
+                alt="Download &amp; Install"
+              />
+            </div>
+            <p class="stepDesc">
+              Install the pixlme app from App store or Playstore
+            </p>
+          </div>
+          <div class="step step2">
+            <div class="stepCount">
+              <span>2</span>
+              <p>Browse and Discover</p>
+            </div>
+
+            <div class="imageGuideWrap">
+              <img
+                src="./assets/images/step/subscribers/browse-discover-customers@4x.png"
+                alt="Browse and Discover"
+              />
+            </div>
+            <p class="stepDesc">
+              Explore high-quality, display-ready images and curated collections.
+            </p>
+          </div>
+          <div class="step step3">
+            <div class="stepCount">
+              <span>3</span>
+              <p>Select Your Favorites</p>
+            </div>
+
+            <div class="imageGuideWrap">
+              <img
+                src="./assets/images/step/subscribers/select-fav-customers@4x.png"
+                alt="Favorites"
+              />
+            </div>
+            <p class="stepDesc">
+              Save and organize favorite artworks and artists.
+            </p>
+          </div>
+          <div class="step step4">
+            <div class="stepCount">
+              <span>4</span>
+              <p>Stream to TV</p>
+            </div>
+
+            <div class="imageGuideWrap">
+              <img
+                src="./assets/images/step/subscribers/stream-tv-customers@4x.png"
+                alt="Stream On Tv"
+              />
+            </div>
+            <p class="stepDesc">
+              Seamlessly stream chosen art directly to your TV or other devices.
+            </p>
+          </div>
+        </div>
+
+        <div class="downAppOutside alignCenter">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.pixlme.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./assets/images/playstore.svg" alt="App Store" />
+          </a>
+          <a
+            href="https://apps.apple.com/in/app/pixlme-stream-quality-photos/id6667108899"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./assets/images/appstore.svg" alt="Google Play" />
+          </a>
+        </div>
+      </div>
+
+      <div class="testimonial-slider animate-on-scroll">
+        <h2 class="headingText">What our subscribers say</h2>
+        <div class="testimonial-slide">
+          <div class="tstWrap">
+           <div class="tstContent ComingSoonSecWrap">
+              <div class="comingSoonsec">
+                <h2>Coming Soon</h2>
+              </div>
+              <!-- <div class="qutImg">
+                <img src="./assets/images/testimonials/quote_img.svg" />
+              </div>
+              <div class="testimonial-textWrap">
+                <h2 class="name">Ritwik Muralidar</h2>
+                <p class="testimonial-text">
+                  You guys have amazing customer service with such a quick
+                  response time.<br />
+                  I appreciate all the assistance!
+                </p>
+              </div>
+              <div class="testimonial-info">
+                <p class="date">23 Jun 2024</p>
+              </div>
+            </div>
+            <div class="tstImage">
+              <img
+                src="./assets/images/testimonials/testimonials_person@4x.png"
+                alt="Testimonials"
+                class="testimonial-image"
+              />
+            </div> -->
+          </div>
+        </div>
+        <!-- <div class="testimonial-slide">
+          <div class="tstWrap">
+            <div class="tstContent">
+              <div class="qutImg">
+                <img src="./assets/images/testimonials/quote_img.svg" />
+              </div>
+              <div class="testimonial-textWrap">
+                <h2 class="name">Anjali Patel</h2>
+                <p class="testimonial-text">
+                  Exceptional experience!<br />
+                  The team was incredibly helpful and attentive to all my
+                  needs.<br />
+                  Highly recommend!
+                </p>
+              </div>
+              <div class="testimonial-info">
+                <p class="date">15 Aug 2024</p>
+              </div>
+            </div>
+            <div class="tstImage">
+              <img
+                src="./assets/images/testimonials/testimonials_person@4x.png"
+                alt="Testimonials"
+                class="testimonial-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="tstWrap">
+            <div class="tstContent">
+              <div class="qutImg">
+                <img src="./assets/images/testimonials/quote_img.svg" />
+              </div>
+              <div class="testimonial-textWrap">
+                <h2 class="name">John Smith</h2>
+                <p class="testimonial-text">
+                  Top-notch service, and the response was incredibly quick!
+                  <br />I felt well taken care of throughout the process.
+                </p>
+              </div>
+              <div class="testimonial-info">
+                <p class="date">30 Nov 2024</p>
+              </div>
+            </div>
+            <div class="tstImage">
+              <img
+                src="./assets/images/testimonials/testimonials_person@4x.png"
+                alt="Testimonials"
+                class="testimonial-image"
+              />
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="indicator-container">
+          <span class="prev" onclick="moveSlide(-1)">&#8249;</span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="next" onclick="moveSlide(1)">&#8250;</span>
+        </div> -->
+      </div>
+
+      <div class="qaWrap animate-on-scroll">
+        <div class="qaLeft">
+          <h2>Your questions, answered</h2>
+        </div>
+        <div class="qaRight">
+          <div class="qaAccordion">
+            <div class="qaaHeader active">
+              What is PiXL Me?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="qaaContent opened">
+              PiXL Me is an art-streaming platform designed to bring
+              high-quality, display-ready images straight to your screens.
+              Personalize your spaces by browsing and showcasing unique digital
+              artwork effortlessly.
+            </div>
+          </div>
+          <div class="qaAccordion">
+            <div class="qaaHeader active">
+              What types of images can I stream on PiXL Me?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="qaaContent opened">
+              PiXL Me provides an extensive range of carefully selected images,
+              including photography, photographic art, fine art, and exclusive
+              curated collections from talented creators worldwide.
+            </div>
+          </div>
+          <div class="qaAccordion">
+            <div class="qaaHeader active">
+              Can I upload my own images to stream?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="qaaContent opened">
+              Yes! Subscribers can upload personal content to enhance their own
+              art streaming experience. Simply use the upload feature in your
+              PiXL Me account.
+            </div>
+          </div>
+          <div class="qaAccordion">
+            <div class="qaaHeader active">
+              How do I customize the slideshow timing on my devices?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="qaaContent opened">
+              Easily customize how often images rotate by accessing your display
+              settings. You can select from options such as Static (no
+              rotation), Hourly, Daily, or custom intervals to perfectly suit
+              your viewing preferences.
+            </div>
+          </div>
+          <div class="qaAccordion">
+            <div class="qaaHeader active">
+              Which devices can I use to stream PiXL Me content?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="qaaContent opened">
+              PiXL Me seamlessly streams to multiple devices including Apple TV,
+              LG and Samsung Smart TVs &amp; Android TVs making your favorite
+              images accessible anytime, anywhere.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footerContent">
+        <!-- Column 1 -->
+        <div class="f-col1">
+          <div class="f-logoSec">
+            <img src="./assets/images/pixlme-logo.svg" alt="Logo" />
+            <div class="f-linksec gap20">
+              <div class="f-heading">Contact</div>
+              <a href="mailto:support@pixlme.com">support@pixlme.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Our Company</div>
+            <a href="aboutus.html">About Us</a>
+            <a href="mailto:support@pixlme.com">Support</a>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Quick Links</div>
+            <a href="https://app.pixlme.com/" target="_blank">Login</a>
+            <a href="https://app.pixlme.com/" target="_blank">Sign Up</a>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Follow Us</div>
+            <a
+              href="https://www.facebook.com/share/18npwqgYsY/?mibextid=wwXIfr"
+              target="_blank"
+              ><svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                ></path>
+              </svg>
+              Facebook</a
+            >
+            <a
+              href=" https://www.instagram.com/pixl.me?igsh=MW1nYzd1andvcjFteA=="
+              target="_blank"
+              class="social"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                ></path>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyRightsec">
+        <div class="copyText">
+          <p>&copy; 2025 PiXL Me. All rights reserved.</p>
+        </div>
+
+        <div class="copyLinkP">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms & Conditions</a>
+          <a href="licence-agreement.html">License Agreement</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
