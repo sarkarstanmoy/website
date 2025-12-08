@@ -279,6 +279,10 @@ header:not(.sticky) {
 .benefits .benefit.benefit3 {
   background: #C2F4DF;
   color: #000000;
+}
+.benefits .benefit.benefit4 {
+  background: #C2D8F4;
+  color: #000000;
   margin-bottom: 0;
 }
 .benefits .benefit .benefit-content {
@@ -391,6 +395,24 @@ header:not(.sticky) {
 }
 .benefits .benefit .benefit-image .benefitsCardContent .bc1.bg-paleGreen h2 {
   color: #005A2F;
+}
+.benefits .benefit .benefit-image.video-container {
+  padding: 0;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefits .benefit .benefit-image.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .guide-container {
@@ -1579,6 +1601,52 @@ footer .copyRightsec .copyLinkP a {
   font-weight: 500;
 }
 
+.artistVideoSection {
+  padding: 80px 4%;
+  background-color: #0C0E10;
+}
+.artistVideoSection .videoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.artistVideoSection .videoContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.artistVideoSection .videoContent h3 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+.artistVideoSection .videoContent p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #A4A6A7;
+}
+.artistVideoSection .videoEmbed {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #212121;
+}
+.artistVideoSection .videoEmbed iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 24px;
+}
+
 .privacy-policy {
   display: flex;
   flex-direction: column;
@@ -2000,6 +2068,19 @@ footer .copyRightsec .copyLinkP a {
   }
   .coverSection .coverRight {
     width: 100%;
+  }
+  .artistVideoSection {
+    padding: 50px 4%;
+  }
+  .artistVideoSection .videoWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .artistVideoSection .videoContent h3 {
+    font-size: 28px;
+  }
+  .artistVideoSection .videoContent p {
+    font-size: 16px;
   }
   .fullImageSection {
     padding: 0 4% 50px;
