@@ -449,7 +449,7 @@
         <h2>Showcase</h2>
         <div class="gallery-row">
           <img
-            src="./assets/images/showcase/Showcase-1.jpg"
+            src="./assets/images/showcase/Showcase-1.png"
             alt="Showcase 1"
             class="img-22 animate-on-scroll"
           />
@@ -1264,9 +1264,9 @@
     </footer>
     
     <!-- Email Collection Modal -->
-    <div id="emailSubscriptionModal" class="launch-modal-overlay">
+    <div id="emailSubscriptionModal" class="launch-modal-overlay" id="launch-popup">
       <div class="launch-modal">
-        <button class="launch-modal-close" onclick="closeEmailModal()">
+        <button class="launch-modal-close" type="button" onclick="window.closeEmailModal && window.closeEmailModal();">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1301,6 +1301,10 @@
                 placeholder="Enter email for launch updates" 
                 required
               >
+              <div id="launch-mce-responses" class="launch-mce-responses">
+                <div class="launch-mce-response" id="launch-mce-error-response" style="display: none;"></div>
+                <div class="launch-mce-response" id="launch-mce-success-response" style="display: none;"></div>
+              </div>
               <div aria-hidden="true" style="position: absolute; left: -5000px;">
                 <input type="text" name="b_8cc9fafc4df7f08540169e321_221dc05449" tabindex="-1" value="">
               </div>
@@ -1315,26 +1319,186 @@
 
     <script src="./assets/js/main.js"></script>
     <script>
-      // Show email subscription modal on page load
-      window.addEventListener('load', function() {
-        // Show modal after 2 seconds
-        setTimeout(function() {
-          document.getElementById('emailSubscriptionModal').style.display = 'flex';
-        }, 2000);
-      });
+      // Enhanced Mailchimp Popup with Persistence
+      (function() {
+        const STORAGE_KEY = 'pixlme_subscribed';
+        const MODAL_ID = 'emailSubscriptionModal';
+        const FORM_ID = 'launch-subscribe-form';
+        const SUCCESS_RESPONSE_ID = 'launch-mce-success-response';
+        const HIDE_CLASS = 'hide-popup';
 
-      // Close modal function
-      function closeEmailModal() {
-        document.getElementById('emailSubscriptionModal').style.display = 'none';
-      }
-
-      // Close modal when clicking outside the modal content
-      window.addEventListener('click', function(event) {
-        const modal = document.getElementById('emailSubscriptionModal');
-        if (event.target == modal) {
-          modal.style.display = 'none';
+        // Check if user has already subscribed
+        function hasUserSubscribed() {
+          return localStorage.getItem(STORAGE_KEY) === 'true';
         }
-      });
+
+        // Mark user as subscribed
+        function markAsSubscribed() {
+          localStorage.setItem(STORAGE_KEY, 'true');
+        }
+
+        // Hide popup with animation
+        function hidePopup() {
+          const modal = document.getElementById(MODAL_ID);
+          const overlay = document.getElementById('launch-popup');
+          
+          if (modal) {
+            modal.classList.add(HIDE_CLASS);
+          }
+          if (overlay) {
+            overlay.classList.add(HIDE_CLASS);
+          }
+
+          // Remove from DOM after animation completes
+          setTimeout(function() {
+            if (overlay && overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+          }, 800);
+        }
+
+        // Setup success detection with MutationObserver
+        function setupSuccessDetection() {
+          const successResponse = document.getElementById(SUCCESS_RESPONSE_ID);
+          const form = document.getElementById(FORM_ID);
+          
+          if (!successResponse || !form) return;
+
+          // Watch for changes to the success response element
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              // Check if text content was added to success response
+              const successText = successResponse.textContent.trim();
+              
+              if (successText.length > 0 && !successText.includes('error')) {
+                observer.disconnect();
+                
+                console.log('Success detected:', successText);
+                
+                // Mark as subscribed
+                markAsSubscribed();
+                
+                // Clear form
+                const emailInput = document.getElementById('launch-email-input');
+                if (emailInput) {
+                  emailInput.value = '';
+                }
+                
+                // Hide popup after a short delay
+                setTimeout(function() {
+                  hidePopup();
+                }, 1200);
+              }
+            });
+          });
+
+          // Also watch for changes to form classes or display
+          const formObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              // Check if success response is now visible
+              const successText = successResponse.textContent.trim();
+              if (successText.length > 0 && !successText.includes('error')) {
+                formObserver.disconnect();
+                observer.disconnect();
+                
+                console.log('Success detected via form observer:', successText);
+                
+                // Mark as subscribed
+                markAsSubscribed();
+                
+                // Clear form
+                const emailInput = document.getElementById('launch-email-input');
+                if (emailInput) {
+                  emailInput.value = '';
+                }
+                
+                // Hide popup after a short delay
+                setTimeout(function() {
+                  hidePopup();
+                }, 1200);
+              }
+            });
+          });
+
+          // Configuration for observer
+          const config = {
+            childList: true,
+            subtree: true,
+            characterData: true
+          };
+
+          const formConfig = {
+            attributes: true,
+            attributeFilter: ['style', 'class']
+          };
+
+          observer.observe(successResponse, config);
+          formObserver.observe(form, formConfig);
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+          // If user already subscribed, don't show popup
+          if (hasUserSubscribed()) {
+            const overlay = document.getElementById('launch-popup');
+            if (overlay && overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+            return;
+          }
+
+          // Show modal after 2 seconds
+          setTimeout(function() {
+            const modal = document.getElementById(MODAL_ID);
+            if (modal) {
+              modal.style.display = 'flex';
+              // Setup success detection after modal is visible
+              setupSuccessDetection();
+            }
+          }, 2000);
+        });
+
+        // Intercept form submission to ensure success detection
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById(FORM_ID);
+          if (form) {
+            form.addEventListener('submit', function(e) {
+              console.log('Form submitted');
+              setupSuccessDetection();
+            });
+          }
+        });
+
+        // Close modal function
+        window.closeEmailModal = function() {
+          const modal = document.getElementById(MODAL_ID);
+          const overlay = document.getElementById('launch-popup');
+          
+          if (modal) {
+            modal.classList.add(HIDE_CLASS);
+          }
+          if (overlay) {
+            overlay.classList.add(HIDE_CLASS);
+          }
+
+          // Remove from DOM after animation completes
+          setTimeout(function() {
+            if (overlay && overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+          }, 800);
+        };
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+          const overlay = document.getElementById('launch-popup');
+          const modal = document.querySelector('.launch-modal');
+          
+          if (overlay && modal && event.target === overlay) {
+            window.closeEmailModal();
+          }
+        });
+      })();
     </script>
   </body>
 </html>
