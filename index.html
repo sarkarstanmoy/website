@@ -1091,7 +1091,7 @@
      
 
       <!-- Pricing Model -->
-<div id="pricing" class="model">
+<div id="pricingModal" class="model">
   <div class="model-content">
     <span class="close-button" onclick="closePricing()">×</span>
 
@@ -1134,7 +1134,7 @@
 
 
  <!--Pricing Container -->
-       <div class="pricingContainer" id="pricing">
+       <div class="pricingContainer">
         <div class="pricingWrap">
           <div class="priceLeft">
             <h2 class="priceTitle">Pricing</h2>
@@ -1264,7 +1264,7 @@
     </footer>
     
     <!-- Email Collection Modal -->
-    <div id="emailSubscriptionModal" class="launch-modal-overlay" id="launch-popup">
+    <div id="launch-popup" class="launch-modal-overlay">
       <div class="launch-modal">
         <button class="launch-modal-close" type="button" onclick="window.closeEmailModal && window.closeEmailModal();">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1322,7 +1322,7 @@
       // Enhanced Mailchimp Popup with Persistence
       (function() {
         const STORAGE_KEY = 'pixlme_subscribed';
-        const MODAL_ID = 'emailSubscriptionModal';
+        const MODAL_ID = 'launch-popup';
         const FORM_ID = 'launch-subscribe-form';
         const SUCCESS_RESPONSE_ID = 'launch-mce-success-response';
         const HIDE_CLASS = 'hide-popup';
