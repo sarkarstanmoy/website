@@ -44,7 +44,7 @@
             </ul>
           </li>
           <li><a href="#features">Features</a></li>
-          <li><a href="artists.html#artistTestimonials">Artists</a></li>
+          <li><a href="artists.html">Artists</a></li>
           <!-- <li><a href="https://app.pixlme.com/" target="_blank">Artists</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
          <li><a href="#" onclick="openPricing()">Pricing</a></li>
@@ -85,6 +85,24 @@
 
       <section id="benefits" class="benefits" data-effect="slide-up">
         <h2 class="headingTextBenefits">Benefits of Pixlme</h2>
+        <div class="benefit benefit4 animate-on-scroll">
+          <div class="benefit-content">
+            <h2>Experience PiXL Me</h2>
+            <p>
+              Watch our official launch video and discover how we're transforming the way you experience art on your screens.
+            </p>
+            <span class="learn-more">Watch the video</span>
+          </div>
+          <div class="benefit-image video-container">
+            <iframe
+              src="https://www.youtube.com/embed/V1Q_Fx9e2nw"
+              title="PiXL Me Introduction Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
         <div class="benefit benefit1 animate-on-scroll">
           <div class="benefit-content">
             <h2>For Subscribers</h2>
@@ -214,25 +232,6 @@
               src="./assets/images/benefits/for_subscribers@4x.png"
               alt="Benefit One Image"
             />
-          </div>
-        </div>
-
-        <div class="benefit benefit4 animate-on-scroll">
-          <div class="benefit-content">
-            <h2>Experience PiXL Me</h2>
-            <p>
-              Watch our official launch video and discover how we're transforming the way you experience art on your screens.
-            </p>
-            <span class="learn-more">Watch the video</span>
-          </div>
-          <div class="benefit-image video-container">
-            <iframe
-              src="https://www.youtube.com/embed/V1Q_Fx9e2nw"
-              title="PiXL Me Introduction Video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
           </div>
         </div>
       </section>
@@ -450,7 +449,7 @@
         <h2>Showcase</h2>
         <div class="gallery-row">
           <img
-            src="./assets/images/showcase/Showcase-1.jpg"
+            src="./assets/images/showcase/Showcase-1.png"
             alt="Showcase 1"
             class="img-22 animate-on-scroll"
           />
@@ -1264,7 +1263,242 @@
       </div>
     </footer>
     
+    <!-- Email Collection Modal -->
+    <div id="emailSubscriptionModal" class="launch-modal-overlay" id="launch-popup">
+      <div class="launch-modal">
+        <button class="launch-modal-close" type="button" onclick="window.closeEmailModal && window.closeEmailModal();">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        
+        <div class="launch-modal-container">
+          <!-- Left Section - Dark Panel -->
+          <div class="launch-modal-left">
+            <h1 class="launch-modal-title">
+              Stay up to date on<br>the PiXL Me launch
+            </h1>
+            <p class="launch-modal-subtitle">PiXL Me is almost here.</p>
+            <p class="launch-modal-description">
+              Sign up to get launch updates, early access invitations, and a first look at new 4K art collections for your TV.
+            </p>
+          </div>
+
+          <!-- Right Section - Light Panel -->
+          <div class="launch-modal-right">
+            <div class="launch-modal-badge">Launch Updates</div>
+            <h2 class="launch-modal-right-title">
+              Be first in line<br>when we go live.
+            </h2>
+            
+            <form action="https://pixlme.us17.list-manage.com/subscribe/post?u=8cc9fafc4df7f08540169e321&amp;id=221dc05449&amp;f_id=0079c2e1f0" method="post" id="launch-subscribe-form" name="launch-subscribe-form" class="launch-modal-form" target="_blank">
+              <input 
+                type="email" 
+                name="EMAIL" 
+                id="launch-email-input" 
+                class="launch-modal-input" 
+                placeholder="Enter email for launch updates" 
+                required
+              >
+              <div id="launch-mce-responses" class="launch-mce-responses">
+                <div class="launch-mce-response" id="launch-mce-error-response" style="display: none;"></div>
+                <div class="launch-mce-response" id="launch-mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_8cc9fafc4df7f08540169e321_221dc05449" tabindex="-1" value="">
+              </div>
+              <button type="submit" class="launch-modal-button">Notify Me</button>
+            </form>
+            
+            <p class="launch-modal-footer">No spam. Just beautiful TV art.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="./assets/js/main.js"></script>
+    <script>
+      // Enhanced Mailchimp Popup with Persistence
+      (function() {
+        const STORAGE_KEY = 'pixlme_subscribed';
+        const MODAL_ID = 'emailSubscriptionModal';
+        const FORM_ID = 'launch-subscribe-form';
+        const SUCCESS_RESPONSE_ID = 'launch-mce-success-response';
+        const HIDE_CLASS = 'hide-popup';
+
+        // Check if user has already subscribed
+        function hasUserSubscribed() {
+          return localStorage.getItem(STORAGE_KEY) === 'true';
+        }
+
+        // Mark user as subscribed
+        function markAsSubscribed() {
+          localStorage.setItem(STORAGE_KEY, 'true');
+        }
+
+        // Hide popup with animation
+        function hidePopup() {
+          const modal = document.getElementById(MODAL_ID);
+          const overlay = document.getElementById('launch-popup');
+          
+          if (modal) {
+            modal.classList.add(HIDE_CLASS);
+          }
+          if (overlay) {
+            overlay.classList.add(HIDE_CLASS);
+          }
+
+          // Remove from DOM after animation completes
+          setTimeout(function() {
+            if (overlay && overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+          }, 800);
+        }
+
+        // Setup success detection with MutationObserver
+        function setupSuccessDetection() {
+          const successResponse = document.getElementById(SUCCESS_RESPONSE_ID);
+          const form = document.getElementById(FORM_ID);
+          
+          if (!successResponse || !form) return;
+
+          // Watch for changes to the success response element
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              // Check if text content was added to success response
+              const successText = successResponse.textContent.trim();
+              
+              if (successText.length > 0 && !successText.includes('error')) {
+                observer.disconnect();
+                
+                console.log('Success detected:', successText);
+                
+                // Mark as subscribed
+                markAsSubscribed();
+                
+                // Clear form
+                const emailInput = document.getElementById('launch-email-input');
+                if (emailInput) {
+                  emailInput.value = '';
+                }
+                
+                // Hide popup after a short delay
+                setTimeout(function() {
+                  hidePopup();
+                }, 1200);
+              }
+            });
+          });
+
+          // Also watch for changes to form classes or display
+          const formObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              // Check if success response is now visible
+              const successText = successResponse.textContent.trim();
+              if (successText.length > 0 && !successText.includes('error')) {
+                formObserver.disconnect();
+                observer.disconnect();
+                
+                console.log('Success detected via form observer:', successText);
+                
+                // Mark as subscribed
+                markAsSubscribed();
+                
+                // Clear form
+                const emailInput = document.getElementById('launch-email-input');
+                if (emailInput) {
+                  emailInput.value = '';
+                }
+                
+                // Hide popup after a short delay
+                setTimeout(function() {
+                  hidePopup();
+                }, 1200);
+              }
+            });
+          });
+
+          // Configuration for observer
+          const config = {
+            childList: true,
+            subtree: true,
+            characterData: true
+          };
+
+          const formConfig = {
+            attributes: true,
+            attributeFilter: ['style', 'class']
+          };
+
+          observer.observe(successResponse, config);
+          formObserver.observe(form, formConfig);
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+          // If user already subscribed, don't show popup
+          if (hasUserSubscribed()) {
+            const overlay = document.getElementById('launch-popup');
+            if (overlay && overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+            return;
+          }
+
+          // Show modal after 2 seconds
+          setTimeout(function() {
+            const modal = document.getElementById(MODAL_ID);
+            if (modal) {
+              modal.style.display = 'flex';
+              // Setup success detection after modal is visible
+              setupSuccessDetection();
+            }
+          }, 2000);
+        });
+
+        // Intercept form submission to ensure success detection
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById(FORM_ID);
+          if (form) {
+            form.addEventListener('submit', function(e) {
+              console.log('Form submitted');
+              setupSuccessDetection();
+            });
+          }
+        });
+
+        // Close modal function
+        window.closeEmailModal = function() {
+          const modal = document.getElementById(MODAL_ID);
+          const overlay = document.getElementById('launch-popup');
+          
+          if (modal) {
+            modal.classList.add(HIDE_CLASS);
+          }
+          if (overlay) {
+            overlay.classList.add(HIDE_CLASS);
+          }
+
+          // Remove from DOM after animation completes
+          setTimeout(function() {
+            if (overlay && overlay.parentNode) {
+              overlay.parentNode.removeChild(overlay);
+            }
+          }, 800);
+        };
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+          const overlay = document.getElementById('launch-popup');
+          const modal = document.querySelector('.launch-modal');
+          
+          if (overlay && modal && event.target === overlay) {
+            window.closeEmailModal();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
