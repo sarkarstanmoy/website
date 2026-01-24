@@ -1091,7 +1091,7 @@
      
 
       <!-- Pricing Model -->
-<div id="pricing" class="model">
+<div id="pricingModal" class="model">
   <div class="model-content">
     <span class="close-button" onclick="closePricing()">×</span>
 
@@ -1134,7 +1134,7 @@
 
 
  <!--Pricing Container -->
-       <div class="pricingContainer" id="pricing">
+       <div class="pricingContainer">
         <div class="pricingWrap">
           <div class="priceLeft">
             <h2 class="priceTitle">Pricing</h2>
@@ -1264,7 +1264,7 @@
     </footer>
     
     <!-- Email Collection Modal -->
-    <div id="emailSubscriptionModal" class="launch-modal-overlay" id="launch-popup">
+    <div id="launch-popup" class="launch-modal-overlay">
       <div class="launch-modal">
         <button class="launch-modal-close" type="button" onclick="window.closeEmailModal && window.closeEmailModal();">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1319,10 +1319,109 @@
 
     <script src="./assets/js/main.js"></script>
     <script>
+      // Robust launch modal popup logic using localStorage, no UI changes
+      (function() {
+        var POPUP_KEY = 'launchPopupSeen';
+        var popup = document.getElementById('launch-popup');
+        var form = document.getElementById('launch-subscribe-form');
+        // Hide popup if already seen
+        function hidePopup() {
+          if (popup) popup.style.display = 'none';
+        }
+        function showPopup() {
+          if (popup) popup.style.display = 'flex';
+        }
+        // On page load, check localStorage and control popup
+        document.addEventListener('DOMContentLoaded', function() {
+          if (localStorage.getItem(POPUP_KEY)) {
+            hidePopup();
+          } else {
+            showPopup();
+          }
+        });
+        // On Notify Me (form submit), set key and close popup
+        if (form) {
+          form.addEventListener('submit', function(e) {
+            localStorage.setItem(POPUP_KEY, 'true');
+            setTimeout(hidePopup, 100); // allow submit, then hide
+          });
+        }
+      })();
+    </script>
+    <script>
+      // Robust launch modal popup logic using localStorage, no UI changes
+      (function() {
+        var POPUP_KEY = 'launchPopupSeen';
+        var popup = document.getElementById('launch-popup');
+        // Hide popup if already seen, before any other script can show it
+        if (localStorage.getItem(POPUP_KEY) && popup) {
+          popup.style.display = 'none';
+        }
+        // Prevent any show logic if already seen
+        var origSetTimeout = window.setTimeout;
+        window.setTimeout = function(fn, delay) {
+          return origSetTimeout(function() {
+            if (localStorage.getItem(POPUP_KEY) && popup) {
+              popup.style.display = 'none';
+              return;
+            }
+            fn();
+          }, delay);
+        };
+        // On Notify Me click, set key and close popup
+        document.addEventListener('click', function(e) {
+          if (e.target && e.target.id === 'notify-launch-popup') {
+            localStorage.setItem(POPUP_KEY, 'true');
+            if (popup) popup.style.display = 'none';
+          }
+        });
+      })();
+    </script>
+    <script>
+      // Launch modal popup visibility logic using localStorage, no UI changes
+      (function() {
+        var POPUP_KEY = 'launchPopupSeen';
+        var popup = document.getElementById('launch-popup');
+        // On page load, hide popup if already seen
+        document.addEventListener('DOMContentLoaded', function() {
+          if (localStorage.getItem(POPUP_KEY)) {
+            if (popup) popup.style.display = 'none';
+          }
+        });
+        // On Notify Me click, set key and close popup
+        document.addEventListener('click', function(e) {
+          if (e.target && e.target.id === 'notify-launch-popup') {
+            localStorage.setItem(POPUP_KEY, 'true');
+            if (popup) popup.style.display = 'none';
+          }
+        });
+      })();
+    </script>
+    <script>
+      // Launch popup visibility logic using localStorage, no UI changes
+      (function() {
+        var POPUP_KEY = 'launchPopupSeen';
+        var popup = document.getElementById('launch-popup');
+        // On page load, hide popup if already seen
+        document.addEventListener('DOMContentLoaded', function() {
+          if (localStorage.getItem(POPUP_KEY)) {
+            if (popup) popup.style.display = 'none';
+          }
+        });
+        // On Notify Me click, set key and close popup
+        document.addEventListener('click', function(e) {
+          if (e.target && e.target.id === 'notify-launch-popup') {
+            localStorage.setItem(POPUP_KEY, 'true');
+            if (popup) popup.style.display = 'none';
+          }
+        });
+      })();
+    </script>
+    <script>
       // Enhanced Mailchimp Popup with Persistence
       (function() {
         const STORAGE_KEY = 'pixlme_subscribed';
-        const MODAL_ID = 'emailSubscriptionModal';
+        const MODAL_ID = 'launch-popup';
         const FORM_ID = 'launch-subscribe-form';
         const SUCCESS_RESPONSE_ID = 'launch-mce-success-response';
         const HIDE_CLASS = 'hide-popup';

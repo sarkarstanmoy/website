@@ -186,11 +186,11 @@ setInterval(rotateImages, 3000);
 
 //  script for pricing popup
   function openPricing() {
-    document.getElementById('pricing').style.display = 'flex';
+    document.getElementById('pricingModal').style.display = 'flex';
   }
 
   function closePricing() {
-    document.getElementById('pricing').style.display = 'none';
+    document.getElementById('pricingModal').style.display = 'none';
   }
 
   
