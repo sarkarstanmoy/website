@@ -34,6 +34,23 @@ body {
   font-style: normal;
 }
 
+.early-access-bar {
+  background-color: #F5C518;
+  color: #0C0E10;
+  text-align: left;
+  padding: 8px 4%;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.early-access-label {
+  font-weight: 700;
+}
+
+.early-access-text {
+  font-weight: 400;
+}
+
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
