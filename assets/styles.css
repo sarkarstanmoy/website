@@ -35,20 +35,29 @@ body {
 }
 
 .early-access-bar {
-  background-color: #F5C518;
-  color: #0C0E10;
+  background-color: #0C0E10;
+  color: #ffffff;
   text-align: left;
   padding: 8px 4%;
   font-size: 0.85rem;
   line-height: 1.4;
 }
 
-.early-access-label {
+.early-access-headline {
+  font-size: 1.1rem;
   font-weight: 700;
+  margin: 0 0 2px 0;
 }
 
-.early-access-text {
+.early-access-sub {
+  font-size: 0.85rem;
   font-weight: 400;
+  margin: 0;
+}
+
+.early-access-sub-inline {
+  font-weight: 400;
+  font-size: 1.1rem;
 }
 
 .animate-on-scroll {
