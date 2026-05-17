@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PiXLMe — Simple Pricing</title>
+    <link rel="icon" href="./assets/images/favicon.ico" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Soft-launch banner -->
+    <div class="promo-banner" id="promo-banner">
+      <p>Early adopter pricing available now. Start your 14-day free trial.&nbsp;&nbsp;<a href="https://app.pixlme.com/register" target="_blank" data-analytics="banner-cta">Start Free Trial &rarr;</a></p>
+    </div>
+
+    <!-- Nav -->
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="./assets/images/pixlme-logo.svg" alt="PiXLMe" />
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav id="nav-links">
+        <ul>
+          <li><a href="index.html" data-analytics="nav-home">Home</a></li>
+          <li><a href="index.html#how-it-works" data-analytics="nav-how-it-works">How It Works</a></li>
+          <li><a href="artists.html" data-analytics="nav-for-artists">For Artists</a></li>
+          <li class="active"><a href="pricing.html" data-analytics="nav-pricing">Pricing</a></li>
+          <li><a href="aboutus.html" data-analytics="nav-about">About</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login">
+          <a href="https://app.pixlme.com/" target="_blank" data-analytics="nav-sign-in">Sign In</a>
+        </button>
+        <button class="signup cta-primary">
+          <a href="https://app.pixlme.com/register" target="_blank" data-analytics="nav-start-free-trial">Start Free Trial</a>
+        </button>
+      </div>
+    </header>
+
+    <div class="pixmeOneralWrap">
+
+      <!-- 1. Hero — short headline + clear soft-launch message -->
+      <section class="pricing-hero animate-on-scroll">
+        <h1>Simple pricing.<br />Clear offer.</h1>
+        <p class="pricing-hero-sub">Soft launch is live — start with a 14-day free trial, early adopter pricing, and cancel anytime.</p>
+        <a href="https://app.pixlme.com/register" target="_blank" class="btn-primary" data-analytics="pricing-hero-start-free-trial">Start Free Trial</a>
+      </section>
+
+      <!-- 2. Main pricing block — one block only -->
+      <section class="pricing-detail-block animate-on-scroll">
+        <h2>Offer story</h2>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="pricing-card-label">14-day free trial</div>
+            <p>Use it free for 14 days — experience the full product. No credit card required to start.</p>
+          </div>
+          <!-- promo-pricing-card: remove this card when early adopter period ends -->
+          <div class="pricing-card pricing-card-promo" id="promo-pricing-card">
+            <div class="pricing-card-label">$1.99/month first year</div>
+            <p>Early adopter soft launch pricing. Lock it in now before standard pricing kicks in.</p>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-card-label">Then $3.99/month</div>
+            <p>Standard pricing after the first year. Cancel any time.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. What's included — short list, no feature grid -->
+      <section class="pricing-included animate-on-scroll">
+        <h2>What&apos;s included</h2>
+        <ul class="included-list">
+          <li>Full access to curated art collections</li>
+          <li>Personal photo uploads to your TV</li>
+          <li>Browse by mood, room, and collection</li>
+          <li>4K-ready content on supported TVs</li>
+          <li>Multi-device support (TV + mobile app)</li>
+          <li>New collections added regularly</li>
+        </ul>
+      </section>
+
+      <!-- 4. FAQ — pricing, trial, cancellation, supported TVs, personal photos -->
+      <section class="faq-section animate-on-scroll">
+        <h2>Questions before you start?</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-header" data-analytics="pricing-faq-open">
+              How does the early adopter offer work?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="faq-content">
+              Standard pricing is $3.99/month. Early adopters lock in at $1.99/month for their first year. This offer is only available during our soft launch window and will be removed once we exit early access.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header" data-analytics="pricing-faq-open">
+              What happens after the first year?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="faq-content">
+              Standard pricing of $3.99/month kicks in automatically. We'll notify you before any pricing change so there are no surprises.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header" data-analytics="pricing-faq-open">
+              Can I cancel anytime?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="faq-content">
+              Yes. Cancel any time from the app or your account settings. If you cancel during the 14-day free trial, you are never charged. After your trial, cancellations take effect at the end of your current billing period.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header" data-analytics="pricing-faq-open">
+              Which TVs are supported?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="faq-content">
+              PiXLMe currently supports Samsung Smart TVs, Apple TV, Sony TVs, and Android TV devices. Check the app store listing for the full and up-to-date compatibility list.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header" data-analytics="pricing-faq-open">
+              Can I show my own photos on TV?
+              <div class="upanddownArrow"></div>
+            </div>
+            <div class="faq-content">
+              Yes. Personal photo uploads are included on all plans. Upload your memories from the mobile app and they appear in your TV library alongside curated art collections.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Final CTA — close the page cleanly -->
+      <section class="pricing-final-cta animate-on-scroll">
+        <h2>Ready to turn your TV into a gallery?</h2>
+        <a href="https://app.pixlme.com/register" target="_blank" class="btn-primary large" data-analytics="pricing-final-cta">Start Free Trial</a>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footerContent">
+        <div class="f-col1">
+          <div class="f-logoSec">
+            <img src="./assets/images/pixlme-logo.svg" alt="PiXLMe" />
+            <div class="f-linksec gap20">
+              <div class="f-heading">Contact</div>
+              <a href="mailto:support@pixlme.com">support@pixlme.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Our Company</div>
+            <a href="aboutus.html">About Us</a>
+            <a href="mailto:support@pixlme.com">Support</a>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Quick Links</div>
+            <a href="artists.html">For Artists</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="https://app.pixlme.com/" target="_blank">Sign In</a>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Download</div>
+            <a href="https://play.google.com/store/apps/details?id=com.pixlme.app" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a href="https://apps.apple.com/in/app/pixlme-stream-quality-photos/id6667108899" target="_blank" rel="noopener noreferrer">App Store</a>
+          </div>
+        </div>
+        <div class="f-col2">
+          <div class="f-linksec">
+            <div class="f-heading">Follow Us</div>
+            <a href="https://www.facebook.com/share/18npwqgYsY/?mibextid=wwXIfr" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/pixl.me?igsh=MW1nYzd1andvcjFteA==" target="_blank">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyRightsec">
+        <div class="copyText">
+          <p>&copy; 2025 PiXL Me. All rights reserved.</p>
+        </div>
+        <div class="copyLinkP">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+          <a href="licence-agreement.html">License Agreement</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
