@@ -1,217 +1,192 @@
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .querySelector(".get-started")
-    .addEventListener("click", function () {});
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector("header");
-  let lastScrollY = window.scrollY;
+/* ============================================================
+   PiXLMe — main.js
+   ============================================================ */
 
-  // If the page loads at the top, show the header
-  if (window.scrollY === 0) {
-    header.classList.add("sticky");
+/* --- Promo banner: add body class so header shifts down --- */
+(function () {
+  if (document.getElementById('promo-banner')) {
+    document.body.classList.add('has-promo-banner');
   }
+})();
 
-  window.addEventListener("scroll", function () {
+/* --- Sticky header on scroll --- */
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('header');
+  if (!header) return;
+  let lastScrollY = window.scrollY;
+  if (window.scrollY === 0) header.classList.add('sticky');
+  window.addEventListener('scroll', function () {
     const currentScrollY = window.scrollY;
-
     if (currentScrollY < lastScrollY) {
-      header.classList.add("sticky");
+      header.classList.add('sticky');
     } else {
-      header.classList.remove("sticky");
+      header.classList.remove('sticky');
     }
-
     lastScrollY = currentScrollY;
   });
 });
 
-//TAB
-document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll(".tab-link");
-  const contents = document.querySelectorAll(".tab-content");
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", function () {
-      tabs.forEach((t) => t.classList.remove("active"));
-      contents.forEach((c) => c.classList.remove("active"));
-
-      this.classList.add("active");
-      document.getElementById(this.dataset.tab).classList.add("active");
+/* --- Hamburger menu --- */
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
     });
-  });
-});
-
-// TAB2
-document.addEventListener("DOMContentLoaded", function () {
-  const tabs1 = document.querySelectorAll(".tab-link1");
-  const contents1 = document.querySelectorAll(".tab-content1");
-
-  tabs1.forEach((tab1) => {
-    tab1.addEventListener("click", function () {
-      tabs1.forEach((tc) => tc.classList.remove("active"));
-      contents1.forEach((cc) => cc.classList.remove("active"));
-
-      this.classList.add("active");
-      document.getElementById(this.dataset.tab1).classList.add("active");
-    });
-  });
-});
-
-//Testimonials
-let slideIndex = 0;
-const slides = document.querySelectorAll(".testimonial-slide");
-const indicators = document.querySelectorAll(".indicator");
-
-function showSlide(index) {
-  if (index >= slides.length) {
-    slideIndex = 0;
-  } else if (index < 0) {
-    slideIndex = slides.length - 1;
-  } else {
-    slideIndex = index;
   }
-
-  slides.forEach((slide, i) => {
-    slide.style.display = i === slideIndex ? "block" : "none";
-  });
-
-  indicators.forEach((indicator, i) => {
-    indicator.classList.toggle("active", i === slideIndex);
-  });
-}
-
-function moveSlide(step) {
-  showSlide(slideIndex + step);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  showSlide(slideIndex);
 });
 
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const submenuParent = document.querySelector(".has-submenu > a");
-
-  // Toggle submenu on click of the parent link
-  submenuParent.addEventListener("click", function (e) {
-    // Prevent the void(0) link from doing anything
-    e.preventDefault();
-    const submenu = this.nextElementSibling;
-
-    // Toggle the submenu display
-    if (submenu.style.display === "block") {
-      submenu.style.display = "none";
-    } else {
-      submenu.style.display = "block";
-    }
-  });
-
-  // Optionally, close the submenu when clicking outside
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest("#nav-links")) {
-      const submenu = document.querySelector(".has-submenu .submenu");
-      if (submenu) {
-        submenu.style.display = "none";
+/* --- Scroll-reveal animation --- */
+document.addEventListener('DOMContentLoaded', function () {
+  const animated = document.querySelectorAll('.animate-on-scroll');
+  function checkAnimation() {
+    const trigger = window.innerHeight * 0.88;
+    animated.forEach(function (el) {
+      if (el.getBoundingClientRect().top < trigger) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
       }
-    }
+    });
+  }
+  window.addEventListener('scroll', checkAnimation);
+  checkAnimation();
+});
+
+/* --- New FAQ accordion (.faq-item / .faq-header) --- */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    const hdr = item.querySelector('.faq-header');
+    if (!hdr) return;
+    hdr.addEventListener('click', function () {
+      const isOpen = item.classList.contains('active');
+      /* close all */
+      document.querySelectorAll('.faq-item.active').forEach(function (open) {
+        open.classList.remove('active');
+      });
+      /* open clicked if it was closed */
+      if (!isOpen) {
+        item.classList.add('active');
+        trackEvent('faq_open', { question: hdr.textContent.trim() });
+      }
+    });
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const accordions = document.querySelectorAll(".qaAccordion");
-
-  accordions.forEach((accordion) => {
-    const header = accordion.querySelector(".qaaHeader");
-
-    header.addEventListener("click", function () {
-      // Toggle current accordion
-      accordion.classList.toggle("active");
-
-      // Close other accordions if needed (for an accordion-like behavior)
-      accordions.forEach((otherAccordion) => {
-        if (otherAccordion !== accordion) {
-          otherAccordion.classList.remove("active");
-        }
+/* --- Legacy QA accordion (.qaAccordion / .qaaHeader) --- */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.qaAccordion').forEach(function (accordion) {
+    const hdr = accordion.querySelector('.qaaHeader');
+    if (!hdr) return;
+    hdr.addEventListener('click', function () {
+      accordion.classList.toggle('active');
+      document.querySelectorAll('.qaAccordion').forEach(function (other) {
+        if (other !== accordion) other.classList.remove('active');
       });
     });
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const animatedElements = document.querySelectorAll(".animate-on-scroll");
-
-  // Function to check if elements are in viewport
-  function checkAnimation() {
-    // You can adjust the trigger point by changing this factor (0.8 = 80% of the viewport height)
-    const triggerBottom = window.innerHeight * 0.8;
-
-    animatedElements.forEach((element) => {
-      const elementTop = element.getBoundingClientRect().top;
-
-      // If the element is above the trigger point, add the active class
-      if (elementTop < triggerBottom) {
-        element.classList.add("active");
-      } else {
-        element.classList.remove("active");
-      }
+/* --- Tab navigation (legacy step-by-step tabs) --- */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.tab-link').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.tab-link').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.tab-content').forEach(function (c) { c.classList.remove('active'); });
+      tab.classList.add('active');
+      const target = document.getElementById(tab.dataset.tab);
+      if (target) target.classList.add('active');
     });
-  }
-
-  // Listen for the scroll event
-  window.addEventListener("scroll", checkAnimation);
-
-  // Initial check in case elements are already in view
-  checkAnimation();
+  });
 });
 
-const images = document.querySelectorAll(".image");
-let index = 0;
-const positions = ["left", "center", "right"];
+/* --- Features tab navigation (legacy .tab-link1) --- */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.tab-link1').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.tab-link1').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.tab-content1').forEach(function (c) { c.classList.remove('active'); });
+      tab.classList.add('active');
+      const target = document.getElementById(tab.dataset.tab1);
+      if (target) target.classList.add('active');
+    });
+  });
+});
 
-function rotateImages() {
-  images.forEach((img, i) => img.classList.remove("left", "center", "right"));
-  index = (index + 1) % images.length;
-  images[index].classList.add("center");
-  images[(index + 1) % images.length].classList.add("right");
-  images[(index + 2) % images.length].classList.add("left");
+/* --- Carousel rotation (legacy contest images) --- */
+(function () {
+  const images = document.querySelectorAll('.carousel .image');
+  if (!images.length) return;
+  let index = 0;
+  function rotateImages() {
+    images.forEach(function (img) { img.classList.remove('left', 'center', 'right'); });
+    index = (index + 1) % images.length;
+    images[index].classList.add('center');
+    images[(index + 1) % images.length].classList.add('right');
+    images[(index + 2) % images.length].classList.add('left');
+  }
+  setInterval(rotateImages, 3000);
+})();
+
+/* --- Smooth scroll for in-page anchor links --- */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const targetId = link.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (!target) return;
+      e.preventDefault();
+      const offset = -80;
+      const top = target.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+});
+
+/* ============================================================
+   Analytics event tracking
+   Fires window.pixlmeAnalytics(event, props) if defined,
+   and logs to console in development.
+   ============================================================ */
+function trackEvent(event, props) {
+  props = props || {};
+  if (typeof window.pixlmeAnalytics === 'function') {
+    window.pixlmeAnalytics(event, props);
+  }
+  if (window.gtag) {
+    window.gtag('event', event, props);
+  }
 }
 
-setInterval(rotateImages, 3000);
-
-//  script for pricing popup
-  function openPricing() {
-    document.getElementById('pricingModal').style.display = 'flex';
-  }
-
-  function closePricing() {
-    document.getElementById('pricingModal').style.display = 'none';
-  }
-
-  
-  // This script is for artist link,to go to a specific artist testimonial page 
-    document.querySelectorAll('.scrollLink').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const offset = -100; 
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset + offset;
-    
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-
+document.addEventListener('DOMContentLoaded', function () {
+  /* Track all [data-analytics] clicks */
+  document.addEventListener('click', function (e) {
+    const el = e.target.closest('[data-analytics]');
+    if (!el) return;
+    const key = el.getAttribute('data-analytics');
+    const eventMap = {
+      'banner-cta':               'banner_cta_click',
+      'hero-start-free-trial':    'homepage_start_free_trial',
+      'hero-watch-demo':          'homepage_watch_demo',
+      'hiw-start-free-trial':     'homepage_start_free_trial',
+      'pricing-start-free-trial': 'homepage_start_free_trial',
+      'home-learn-artist-accounts': 'homepage_artist_learn_more',
+      'pricing-hero-start-free-trial': 'pricing_start_free_trial',
+      'pricing-final-cta':        'pricing_start_free_trial',
+      'artist-join-as-artist':    'artist_join_click',
+      'artist-see-guidelines':    'artist_guidelines_click',
+      'artist-download-guidelines': 'artist_guidelines_click',
+      'nav-home':       'nav_click',
+      'nav-how-it-works': 'nav_click',
+      'nav-for-artists':  'nav_click',
+      'nav-pricing':      'nav_click',
+      'nav-about':        'nav_click',
+      'nav-sign-in':      'nav_click',
+      'nav-start-free-trial': 'nav_start_free_trial',
+    };
+    const eventName = eventMap[key] || 'click';
+    trackEvent(eventName, { label: key, page: window.location.pathname });
+  });
+});
