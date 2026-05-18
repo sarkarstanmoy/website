@@ -2982,6 +2982,22 @@ header .auth-buttons button.cta-primary a {
   line-height: 1.55;
 }
 
+.hero-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+.hero-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .hero-visual {
   flex: 1;
   display: flex;
