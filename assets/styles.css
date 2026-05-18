@@ -1439,15 +1439,13 @@ footer .copyRightsec .copyLinkP a {
 
 .fullImageSection {
   display: flex;
-  gap: 50px;
+  justify-content: center;
   padding: 0 4% 100px;
   background-color: #0C0E10;
   align-items: center;
 }
-.fullImageSection img {
-  width: 100%;
-  height: 80vh;
-  border-radius: 12px;
+.about-tv-mockup {
+  max-width: 900px;
 }
 
 .qaWrap {
@@ -3553,6 +3551,126 @@ header .auth-buttons button.cta-primary a {
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
+}
+
+/* =============================================================
+   TAX INFO SECTION (Artists page)
+   ============================================================= */
+.tax-info-section {
+  padding: 100px 4%;
+  background: #0C0E10;
+}
+.tax-info-header {
+  max-width: 780px;
+  margin-bottom: 48px;
+}
+.tax-info-header h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.tax-info-header p {
+  font-size: 17px;
+  color: #A4A6A7;
+  line-height: 1.6;
+}
+.tax-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.tax-card {
+  background: #171717;
+  border: 1px solid #252525;
+  border-radius: 16px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tax-card-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+.tax-card-badge.us {
+  background: rgba(92, 170, 59, 0.15);
+  color: #5CAA3B;
+  border: 1px solid rgba(92, 170, 59, 0.3);
+}
+.tax-card-badge.intl {
+  background: rgba(228, 58, 25, 0.12);
+  color: #E43A19;
+  border: 1px solid rgba(228, 58, 25, 0.25);
+}
+.tax-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+.tax-card p {
+  font-size: 15px;
+  color: #A4A6A7;
+  line-height: 1.6;
+}
+.tax-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tax-card ul li {
+  font-size: 14px;
+  color: #A4A6A7;
+  padding-left: 16px;
+  position: relative;
+}
+.tax-card ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #555;
+}
+.tax-card ul li strong {
+  color: #d4dfe5;
+}
+.tax-form-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tax-form-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #E43A19;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.tax-form-link:hover { color: #ff6644; }
+.tax-info-note {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 700px;
+}
+.tax-info-note a {
+  color: #A4A6A7;
+  text-decoration: underline;
+}
+.tax-info-note a:hover { color: #fff; }
+
+@media (max-width: 768px) {
+  .tax-cards { grid-template-columns: 1fr; }
+  .tax-info-header h2 { font-size: 32px; }
 }
 
 /* =============================================================
