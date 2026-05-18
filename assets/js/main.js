@@ -190,3 +190,70 @@ document.addEventListener('DOMContentLoaded', function () {
     trackEvent(eventName, { label: key, page: window.location.pathname });
   });
 });
+
+/* --- App Store Modal --- */
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('appStoreModal');
+  const closeBtn = document.getElementById('closeAppStoreModal');
+
+  if (!modal) return;
+
+  // Find all "Start Free Trial" buttons/links
+  function setupStartFreeTrialButtons() {
+    // Selectors for various "Start Free Trial" buttons/links
+    const selectors = [
+      'a[href="https://app.pixlme.com/register"]',
+      'button:has(a[href="https://app.pixlme.com/register"])',
+      '.signup.cta-primary',
+      '.btn-primary[href="https://app.pixlme.com/register"]',
+      '[data-analytics="nav-start-free-trial"]'
+    ];
+
+    document.addEventListener('click', function (e) {
+      const target = e.target.closest(selectors.join(', '));
+      if (!target) return;
+
+      // Don't intercept clicks from the promo banner
+      if (target.closest('.promo-banner')) return;
+
+      e.preventDefault();
+      showAppStoreModal();
+      
+      // Track the event
+      trackEvent('start_free_trial_modal_opened', { 
+        page: window.location.pathname 
+      });
+    }, true); // Use capture phase
+  }
+
+  function showAppStoreModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAppStoreModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Close button
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeAppStoreModal);
+  }
+
+  // Close on overlay click (but not on modal content)
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      closeAppStoreModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeAppStoreModal();
+    }
+  });
+
+  setupStartFreeTrialButtons();
+});
