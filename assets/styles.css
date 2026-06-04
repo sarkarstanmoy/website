@@ -3203,14 +3203,14 @@ header .auth-buttons button.cta-primary a {
 }
 .browse-grid {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1.5fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  height: 420px;
 }
 .browse-card {
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  aspect-ratio: 4 / 3;
 }
 .browse-card-inner {
   position: relative;
@@ -3817,8 +3817,7 @@ header .auth-buttons button.cta-primary a {
   }
 
   /* Browse grid */
-  .browse-grid { grid-template-columns: 1fr; height: auto; }
-  .browse-card { height: 220px; }
+  .browse-grid { grid-template-columns: 1fr 1fr; }
 
   /* For artists teaser */
   .for-artists-teaser { flex-direction: column; gap: 40px; padding: 60px 4%; }
