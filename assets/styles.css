@@ -3244,14 +3244,16 @@ header .auth-buttons button.cta-primary a {
 .for-artists-teaser {
   padding: 100px 4%;
   background: #111316;
-  display: flex;
-  align-items: center;
-  gap: 80px;
 }
 .fat-content {
-  flex: 1;
+  background: #171717;
+  border: 1px solid #252525;
+  border-radius: 20px;
+  padding: 48px;
+  max-width: 640px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 24px;
 }
 .fat-content h2 {
@@ -3820,9 +3822,8 @@ header .auth-buttons button.cta-primary a {
   .browse-grid { grid-template-columns: 1fr 1fr; }
 
   /* For artists teaser */
-  .for-artists-teaser { flex-direction: column; gap: 40px; padding: 60px 4%; }
-  .fat-visual { max-width: 100%; width: 100%; }
-  .fat-visual img { height: 240px; }
+  .for-artists-teaser { padding: 60px 4%; }
+  .fat-content { padding: 28px 24px; }
 
   /* Pricing block */
   .pricing-block { padding: 28px 24px; }
