@@ -213,9 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const target = e.target.closest(selectors.join(', '));
       if (!target) return;
 
-      // Don't intercept clicks from the promo banner
-      if (target.closest('.promo-banner')) return;
-
       e.preventDefault();
       showAppStoreModal();
       
