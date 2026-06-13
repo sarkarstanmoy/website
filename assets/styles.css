@@ -2951,13 +2951,9 @@ header .auth-buttons button.cta-primary a {
   align-items: center;
   justify-content: space-between;
   padding: 80px 4%;
-  background: url("./images/cover/pixme_cover@1x.png") no-repeat center center;
-  background-size: cover;
+  background: radial-gradient(120% 120% at 80% 0%, #1d242b 0%, #0d1115 60%, #090b0d 100%);
   min-height: 88vh;
   gap: 60px;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .hero-section { background-image: url("./images/cover/pixme_cover@2x.png"); }
 }
 
 .hero-content {
@@ -3001,6 +2997,43 @@ header .auth-buttons button.cta-primary a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+/* Animated living-room TV in the hero */
+.hero-tv {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+}
+.hero-tv-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Overlay pinned to the TV screen inside the cover photo */
+.hero-tv-screen {
+  position: absolute;
+  left: 52.88%;
+  top: 24.86%;
+  width: 39.31%;
+  height: 45.60%;
+  overflow: hidden;
+  transform-origin: center;
+}
+.hero-tv-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.hero-tv-slide.is-active {
+  opacity: 1;
 }
 .tv-mockup {
   width: 100%;

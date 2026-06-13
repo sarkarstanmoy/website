@@ -9,6 +9,22 @@
   }
 })();
 
+/* --- Hero TV slideshow: rotate screen images every 1s --- */
+document.addEventListener('DOMContentLoaded', function () {
+  const screen = document.getElementById('heroTvScreen');
+  if (!screen) return;
+
+  const slides = screen.querySelectorAll('.hero-tv-slide');
+  if (slides.length < 2) return;
+
+  let current = 0;
+  setInterval(function () {
+    slides[current].classList.remove('is-active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('is-active');
+  }, 3000);
+});
+
 /* --- Sticky header on scroll --- */
 document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('header');
