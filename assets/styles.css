@@ -298,7 +298,7 @@ header:not(.sticky) {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 100px 4%;
+  padding: 64px 4%;
   background-color: #0C0E10;
   position: relative;
 }
@@ -468,7 +468,7 @@ header:not(.sticky) {
   flex-direction: column;
   gap: 50px;
   padding: 0;
-  padding: 100px 4%;
+  padding: 64px 4%;
 }
 
 .guideWrap {
@@ -652,7 +652,7 @@ header:not(.sticky) {
   flex-direction: column;
   gap: 50px;
   padding: 0;
-  padding: 100px 4%;
+  padding: 64px 4%;
 }
 .appDownloadContainer .appdcWrap {
   width: 100%;
@@ -720,7 +720,7 @@ header:not(.sticky) {
   gap: 20px;
   padding: 0;
   background-color: #272727;
-  padding: 100px 4%;
+  padding: 64px 4%;
 }
 .gallery h2 {
   color: #fff;
@@ -779,7 +779,7 @@ header:not(.sticky) {
   gap: 20px;
   padding: 0;
   background-color: #0C0E10;
-  padding: 100px 4%;
+  padding: 64px 4%;
 }
 .FeaturebenefitContainer .mb-1 {
   margin-bottom: 20px;
@@ -939,7 +939,7 @@ header:not(.sticky) {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 100px 4%;
+  padding: 64px 4%;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -1453,7 +1453,7 @@ footer .copyRightsec .copyLinkP a {
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
-  padding: 100px 4%;
+  padding: 64px 4%;
 }
 .qaWrap .qaLeft {
   width: 40%;
@@ -1577,7 +1577,7 @@ footer .copyRightsec .copyLinkP a {
 .coverSection {
   display: flex;
   gap: 50px;
-  padding: 100px 4%;
+  padding: 64px 4%;
   background-color: #0C0E10;
   align-items: center;
 }
@@ -1648,7 +1648,7 @@ footer .copyRightsec .copyLinkP a {
 }
 
 .artistVideoSection {
-  padding: 80px 4%;
+  padding: 56px 4%;
   background-color: #0C0E10;
 }
 .artistVideoSection .videoWrapper {
@@ -3133,7 +3133,7 @@ header .auth-buttons button.cta-primary a {
    WHY PIXLME
    ============================================================= */
 .why-pixlme {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #0C0E10;
 }
 .why-pixlme h2 {
@@ -3177,7 +3177,7 @@ header .auth-buttons button.cta-primary a {
    HOW IT WORKS (3 steps)
    ============================================================= */
 .how-it-works {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #111316;
 }
 .how-it-works h2 {
@@ -3242,7 +3242,7 @@ header .auth-buttons button.cta-primary a {
    BROWSE BY MOOD / ROOM / MOMENT
    ============================================================= */
 .browse-section {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #0C0E10;
 }
 .browse-section h2 {
@@ -3298,8 +3298,14 @@ header .auth-buttons button.cta-primary a {
    FOR ARTISTS TEASER (lower-page)
    ============================================================= */
 .for-artists-teaser {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #111316;
+}
+.for-artists-teaser > h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 48px;
 }
 .fat-content {
   background: #171717;
@@ -3340,7 +3346,7 @@ header .auth-buttons button.cta-primary a {
    PRICING SECTION (homepage inline)
    ============================================================= */
 .pricing-section {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #0C0E10;
 }
 .pricing-section h2 {
@@ -3411,7 +3417,7 @@ header .auth-buttons button.cta-primary a {
    FAQ SECTION
    ============================================================= */
 .faq-section {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #111316;
 }
 .faq-section h2 {
@@ -3460,7 +3466,7 @@ header .auth-buttons button.cta-primary a {
   display: flex;
   align-items: center;
   gap: 60px;
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #0C0E10;
   min-height: 80vh;
 }
@@ -3496,7 +3502,7 @@ header .auth-buttons button.cta-primary a {
 }
 
 .artist-how-section {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #111316;
 }
 .artist-how-section h2 {
@@ -3549,7 +3555,7 @@ header .auth-buttons button.cta-primary a {
 }
 
 .what-to-upload {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #0C0E10;
 }
 .what-to-upload h2 {
@@ -3602,7 +3608,7 @@ header .auth-buttons button.cta-primary a {
 }
 
 .artist-cta-strip {
-  padding: 80px 4%;
+  padding: 56px 4%;
   background: #111316;
   display: flex;
   align-items: center;
@@ -3615,7 +3621,7 @@ header .auth-buttons button.cta-primary a {
    TAX INFO SECTION (Artists page)
    ============================================================= */
 .tax-info-section {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #0C0E10;
 }
 .tax-info-header {
@@ -3735,7 +3741,7 @@ header .auth-buttons button.cta-primary a {
    PRICING PAGE
    ============================================================= */
 .pricing-hero {
-  padding: 100px 4% 60px;
+  padding: 64px 4% 48px;
   background: #0C0E10;
   display: flex;
   flex-direction: column;
@@ -3827,7 +3833,7 @@ header .auth-buttons button.cta-primary a {
 }
 
 .pricing-final-cta {
-  padding: 100px 4%;
+  padding: 64px 4%;
   background: #0C0E10;
   display: flex;
   flex-direction: column;
