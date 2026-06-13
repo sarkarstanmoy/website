@@ -2975,12 +2975,14 @@ header .auth-buttons button.cta-primary a {
   color: #fff;
   line-height: 1.1;
   white-space: nowrap;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
 }
 .hero-content > p {
   font-size: 18px;
   font-weight: 400;
   color: #d4dfe5;
   line-height: 1.55;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
 .hero-video {
@@ -3013,8 +3015,8 @@ header .auth-buttons button.cta-primary a {
   z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(8, 11, 13, 0.85) 0%,
-    rgba(8, 11, 13, 0.6) 32%,
+    rgba(8, 11, 13, 0.55) 0%,
+    rgba(8, 11, 13, 0.32) 32%,
     rgba(8, 11, 13, 0) 58%
   );
   pointer-events: none;
@@ -3032,6 +3034,7 @@ header .auth-buttons button.cta-primary a {
   display: block;
   width: 100%;
   height: auto;
+  filter: brightness(1.25);
 }
 /* Overlay pinned to the TV screen inside the cover photo */
 .hero-tv-screen {
